@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!-- プログラムを見にきた物好きな方へ -->
+
+  <title>映画ちいかわ　非公式ガイドウェブサイト</title>
+  <meta
+    name="description"
+    content="映画をもっと楽しむための、南国の島を旅するような事前ガイドサイト。"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <!-- み -->
+
+  <!-- =========================
+       Header
+  ========================== -->
+  <header class="header">
+    <a href="#top" class="logo">
+      <span class="logo-mark">✦</span>
+      <span>ISLAND<br>MOVIE GUIDE</span>
+    </a>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="メニューを開く"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="#story">STORY</a>
+      <a href="#characters">CHARACTERS</a>
+      <a href="#world">WORLD</a>
+      <a href="#before">BEFORE WATCH</a>
+    </nav>
+  </header>
+
+
+  <main id="top">
+
+    <!-- =========================
+         Hero
+    ========================== -->
+    <section class="hero">
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <p class="hero-eyebrow">
+          A JOURNEY BEFORE THE MOVIE
+        </p>
+
+        <h1>
+
+          <span>島</span>へ、<br>
+          旅に出よう。
+        </h1>
+
+        <p class="hero-description">
+          映画ちいかわをもっと楽しむために。<br>
+          観る前に少しだけ、世界をのぞいてみませんか？
+        </p>
+
+        <a href="#story" class="hero-button">
+          旅をはじめる
+          <span>↓</span>
+        </a>
+
+      </div>
+
+      <div class="hero-bottom">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="scroll-line"></div>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         Intro
+    ========================== -->
+    <section class="intro">
+
+      <div class="section-inner">
+
+        <p class="section-label">WELCOME TO THE CHIKAWORLD</p>
+
+        <h2>
+          映画を観る前に知っておきたい、<br>
+          <em>ちいかわの世界</em>
+        </h2>
+
+        <p class="intro-text">
+          映画は、ただ観るだけでも楽しい。<br>
+          でも、少しだけ背景を知ってから観ると、
+          見える景色が変わることがあります。
+        </p>
+
+        <div class="wave-divider">
+          <span>〜</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         01 STORY
+    ========================== -->
+    <section class="guide-section story-section" id="story">
+
+      <div class="section-inner">
+
+        <div class="section-heading">
+          <span class="number">01</span>
+
+          <div>
+            <p class="section-label">STORY</p>
+            <h2>この島で、<br>何が起こるのか。</h2>
+          </div>
+        </div>
+
+
+        <div class="story-card">
+
+          <div class="card-image story-image">
+            <span class="image-caption">
+              THE BEGINNING
+            </span>
+          </div>
+
+          <div class="card-content">
+
+            <p class="small-label">
+              STORY GUIDE
+            </p>
+
+            <h3>
+              物語の入口
+            </h3>
+
+            <p>
+              ここでは映画の物語を、ネタバレを避けながら紹介します。
+              主人公がどんな場所で、どんな状況から物語を始めるのか。
+              まずは映画の「入口」を知っておきましょう。
+            </p>
+
+            <div class="info-box">
+              <span>POINT</span>
+              <p>
+                映画を観る前なので、
+                重要な展開や結末には触れていません。
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+<!-- =========================
+     02 CHARACTERS
+========================== -->
+<section class="guide-section characters-section" id="characters">
+
+  <div class="section-inner">
+
+    <div class="section-heading reverse">
+
+      <div>
+        <p class="section-label">CHARACTERS</p>
+        <h2>
+          旅の途中で出会う、<br>
+          個性豊かな仲間たち。
+        </h2>
+      </div>
+
+      <span class="number">02</span>
+
+    </div>
+
+
+    <!-- Character Carousel -->
+    <div class="character-carousel">
+
+      <!-- 左ボタン -->
+      <button
+        class="carousel-button carousel-prev"
+        id="characterPrev"
+        aria-label="前のキャラクター"
+      >
+        ‹
+      </button>
+
+
+      <!-- カードを表示するエリア -->
+      <div class="character-window">
+
+        <div class="character-track" id="characterTrack">
+
+
+          <!-- Character 01 -->
+          <a
+            href="character-01.html"
+            class="character-card"
+          >
+
+            <div class="character-image character-01">
+              <span>01</span>
+            </div>
+
+            <div class="character-info">
+
+              <p class="role">
+                THE MAIN CHARACTER
+              </p>
+
+              <h3>
+                ちいかわ
+              </h3>
+
+              <p>
+                この物語の中心となる人物。
+                彼／彼女がこの島にやってきた理由とは？
+              </p>
+
+              <span class="character-more">
+                VIEW PROFILE →
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- Character 02 -->
+          <a
+            href="character-02.html"
+            class="character-card"
+          >
+
+            <div class="character-image character-02">
+              <span>02</span>
+            </div>
+
+            <div class="character-info">
+
+              <p class="role">
+                THE COMPANION
+              </p>
+
+              <h3>
+                ハチワレ
+              </h3>
+
+              <p>
+                主人公と行動を共にする重要人物。
+                物語にどんな変化をもたらすのでしょうか。
+              </p>
+
+              <span class="character-more">
+                VIEW PROFILE →
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- Character 03 -->
+          <a
+            href="character-03.html"
+            class="character-card"
+          >
+
+            <div class="character-image character-03">
+              <span>03</span>
+            </div>
+
+            <div class="character-info">
+
+              <p class="role">
+                うさぎ
+              </p>
+
+              <h3>
+                謎の人物
+              </h3>
+
+              <p>
+                どこかミステリアスな存在。
+                その正体は映画を観ながら確かめてください。
+              </p>
+
+              <span class="character-more">
+                VIEW PROFILE →
+              </span>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- 右ボタン -->
+      <button
+        class="carousel-button carousel-next"
+        id="characterNext"
+        aria-label="次のキャラクター"
+      >
+        ›
+      </button>
+
+    </div>
+
+
+    <!-- ページ位置 -->
+    <div
+      class="carousel-indicator"
+      id="characterIndicator"
+      aria-live="polite"
+    >
+      <span class="indicator-current">01</span>
+      <span class="indicator-line"></span>
+      <span class="indicator-total">03</span>
+    </div>
+
+
+    <p class="carousel-hint">
+      ← SWIPE OR TAP TO EXPLORE →
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- た -->
+
+    <!-- =========================
+         03 WORLD
+    ========================== -->
+    <section class="guide-section world-section" id="world">
+
+      <div class="section-inner">
+
+        <div class="section-heading">
+
+          <span class="number">03</span>
+
+          <div>
+            <p class="section-label">WORLD</p>
+            <h2>物語の舞台を、<br>少しだけ覗いてみる。</h2>
+          </div>
+
+        </div>
+
+
+        <div class="world-feature">
+
+          <div class="world-image">
+            <div class="sun"></div>
+            <div class="palm palm-left">🌴</div>
+            <div class="palm palm-right">🌴</div>
+
+            <span class="world-location">
+              UNKNOWN ISLAND
+            </span>
+          </div>
+
+          <div class="world-text">
+
+            <p class="small-label">
+              DESTINATION
+            </p>
+
+            <h3>
+              物語の舞台
+            </h3>
+
+            <p>
+              映画の世界をより深く楽しむために、
+              舞台となる場所や時代背景にも注目してみましょう。
+            </p>
+
+            <div class="world-points">
+
+              <div>
+                <span>01</span>
+                <p>
+                  <strong>PLACE</strong><br>
+                  物語が始まる場所
+                </p>
+              </div>
+
+              <div>
+                <span>02</span>
+                <p>
+                  <strong>TIME</strong><br>
+                  物語が描かれる時代
+                </p>
+              </div>
+
+              <div>
+                <span>03</span>
+                <p>
+                  <strong>MOOD</strong><br>
+                  この映画ならではの空気感
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="notice">
+          <span class="notice-icon">☀</span>
+
+          <div>
+            <strong>ここに注目。</strong>
+            <p>
+              映画の中に登場する「場所」や「風景」にも
+              注目してみると、物語への没入感がさらに高まります。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         04 BEFORE WATCH
+    ========================== -->
+    <section class="guide-section before-section" id="before">
+
+      <div class="section-inner">
+
+        <div class="section-heading centered">
+
+          <div>
+            <p class="section-label">BEFORE YOU WATCH</p>
+
+            <h2>
+              映画を観る前の<br>
+              <em>3つの楽しみ方。</em>
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="tips">
+
+          <article class="tip-card">
+            <span class="tip-number">01</span>
+            <span class="tip-icon">👀</span>
+
+            <h3>まずは何も知らずに</h3>
+
+            <p>
+              予告編やレビューを見すぎず、
+              自分の目で物語を発見するのもおすすめ。
+            </p>
+          </article>
+
+
+          <article class="tip-card featured">
+            <span class="tip-number">02</span>
+            <span class="tip-icon">🌴</span>
+
+            <h3>景色を楽しむ</h3>
+
+            <p>
+              ストーリーだけではなく、
+              色・光・音・風景にも注目してみましょう。
+            </p>
+          </article>
+
+
+          <article class="tip-card">
+            <span class="tip-number">03</span>
+            <span class="tip-icon">💬</span>
+
+            <h3>観たあとに語ろう</h3>
+
+            <p>
+              「あのシーンどう思った？」を
+              友人と語るところまでが映画の旅です。
+            </p>
+          </article>
+
+        </div>
+
+
+        <div class="final-message">
+
+          <p class="section-label">
+            HAVE A NICE TRIP
+          </p>
+
+          <h2>
+            それでは、<br>
+            <span>映画の島へ。</span>
+          </h2>
+
+          <p>
+            あとはスクリーンの向こう側へ。<br>
+            素敵な映画体験を。
+          </p>
+
+          <a href="#top" class="back-top">
+            ↑ TOPへ戻る
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+     OFFICIAL LINKS
+========================== -->
+<section class="official-section" id="official">
+
+  <div class="section-inner">
+
+    <div class="official-heading">
+
+      <p class="section-label">
+        OFFICIAL LINKS
+      </p>
+
+      <h2>
+        もっと深く潜りたいなら、<br>
+        <em>公式サイトから。</em>
+      </h2>
+
+      <p>
+        ちいかわや映画についてもっと知りたい場合の公式サイト
+      </p>
+
+    </div>
+
+
+    <div class="official-links">
+
+      <!-- Official Website -->
+      <a
+        href="https://chiikawa.toho-movie.jp/index.html"
+        class="official-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="official-icon">
+          🌐
+        </div>
+
+        <div class="official-link-text">
+          <span>OFFICIAL WEBSITE</span>
+          <strong>『映画ちいかわ 人魚の島のひみつ』公式サイト</strong>
+        </div>
+
+        <span class="official-arrow">
+          ↗
+        </span>
+
+      </a>
+
+      <!-- Instagram -->
+      <a
+        href="https://www.instagram.com/chiikawa_movie/"
+        class="official-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="official-icon">
+          ◎
+        </div>
+
+        <div class="official-link-text">
+          <span>Instagram</span>
+          <strong>『映画ちいかわ 人魚の島のひみつ』公式アカウント</strong>
+        </div>
+
+        <span class="official-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+
+      <!-- X / Twitter -->
+      <a
+        href="https://x.com/ngnchiikawa?lang=ja"
+        class="official-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="official-icon">
+          𝕏
+        </div>
+
+        <div class="official-link-text">
+          <span>X</span>
+          <strong>ちいかわ X公式アカウント</strong>
+        </div>
+
+        <span class="official-arrow">
+          ↗
+        </span>
+
+      </a>
+
+      <a
+      href="https://x.com/ngntrtr"
+      class="official-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="official-icon">
+        𝕏
+      </div>
+
+      <div class="official-link-text">
+        <span>X</span>
+        <strong>ナガノ X公式アカウント</strong>
+      </div>
+
+      <span class="official-arrow">
+        ↗
+      </span>
+
+    </a>
+
+
+
+
+      <!-- YouTube -->
+      <a
+        href="https://www.youtube.com/watch?v=3HAQP-dJyAc&list=PLRj9zPfLhyY1z-ZkS8EfGrGDhEJUXhEbQ&index=10"
+        class="official-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="official-icon">
+          ▶
+        </div>
+
+        <div class="official-link-text">
+          <span>YouTube</span>
+          <strong>
+            2分くらいでわかる予習ムービー～「ちいかわ」の世界～【『映画ちいかわ 人魚の島のひみつ』7月24日(金)公開】</strong>
+        </div>
+
+        <span class="official-arrow">
+          ↗
+        </span>
+
+      </a>
+
+      <a
+      href="https://www.youtube.com/watch?v=s6QUVX_DtXU&list=PLRj9zPfLhyY1z-ZkS8EfGrGDhEJUXhEbQ&index=11"
+      class="official-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+  
+      <div class="official-icon">
+        ▶
+      </div>
+  
+      <div class="official-link-text">
+        <span>YouTube</span>
+        <strong>
+          3分くらいでわかる予習ムービー～キャラクター～【『映画ちいかわ 人魚の島のひみつ』大ヒット上映中】</strong>
+      </div>
+  
+      <span class="official-arrow">
+        ↗
+      </span>
+  
+    </a>
+
+    
+
+    </div>
+
+
+</div>
+
+
+    <p class="official-note">
+      ※ 外部サイトへ移動します
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- な -->
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <footer class="footer">
+
+    <div class="footer-logo">
+      <span>✦</span>
+      CHIKAWORLD MOVIE GUIDE
+    </div>
+
+    <p>
+      A small guide for a great movie journey.
+    </p>
+
+    <small>
+      © 2026 CHIIKAWORLD MOVIE GUIDE
+    </small>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
