@@ -999,38 +999,145 @@ button {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* ========================================
+   CHARACTER GRADIENTS
+======================================== */
 
+/* 01 ちいかわ：ピンク */
 .character-01 {
   background:
     linear-gradient(
       180deg,
-      rgba(0,0,0,0),
-      rgba(0,50,55,0.5)
+      rgba(0, 0, 0, 0),
+      rgba(90, 35, 55, 0.5)
     ),
-    linear-gradient(135deg, #ef8b72, #f9c878);
+    linear-gradient(
+      135deg,
+      #f6a6b8 0%,
+      #ee7d91 45%,
+      #f4b36f 100%
+    );
 }
 
 
+/* 02 ハチワレ：水色 */
 .character-02 {
   background:
     linear-gradient(
       180deg,
-      rgba(0,0,0,0),
-      rgba(0,50,55,0.5)
+      rgba(0, 0, 0, 0),
+      rgba(20, 65, 85, 0.5)
     ),
-    linear-gradient(135deg, #62c7c6, #62a4bd);
+    linear-gradient(
+      135deg,
+      #8edee2 0%,
+      #61c6d2 45%,
+      #6c9fc7 100%
+    );
 }
 
 
+/* 03 うさぎ：黄色 */
 .character-03 {
   background:
     linear-gradient(
       180deg,
-      rgba(0,0,0,0),
-      rgba(0,50,55,0.5)
+      rgba(0, 0, 0, 0),
+      rgba(80, 65, 20, 0.5)
     ),
-    linear-gradient(135deg, #7a9d87, #e5c77d);
+    linear-gradient(
+      135deg,
+      #ffe38a 0%,
+      #f6c85f 45%,
+      #e9a86c 100%
+    );
 }
+
+/* 04 ラッコ：赤 × 黄色 */
+.character-04 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0),
+      rgba(80, 35, 25, 0.35)
+    ),
+    linear-gradient(
+      135deg,
+      #f47c68 0%,
+      #f47c68 55%,
+      #f5c96a 100%
+    );
+}
+
+
+/* 05 モモンガ：薄紫 × グレー */
+.character-05 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0),
+      rgba(55, 45, 65, 0.35)
+    ),
+    linear-gradient(
+      135deg,
+      #c9a9df 0%,
+      #c9a9df 55%,
+      #aeb4b3 100%
+    );
+}
+
+
+/* 06 カニ（古本屋）：グレー × 薄紫 */
+.character-06 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0),
+      rgba(40, 45, 48, 0.4)
+    ),
+    linear-gradient(
+      135deg,
+      #aeb5b5 0%,
+      #aeb5b5 55%,
+      #bba8c8 100%
+    );
+}
+
+
+/* 07 くりまんじゅう：薄緑 × オレンジ */
+.character-07 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0),
+      rgba(35, 65, 45, 0.35)
+    ),
+    linear-gradient(
+      135deg,
+      #9bcfaf 0%,
+      #9bcfaf 55%,
+      #e7a36f 100%
+    );
+}
+
+
+/* 08 シーサー：オレンジ × 緑 */
+.character-08 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0),
+      rgba(80, 45, 20, 0.35)
+    ),
+    linear-gradient(
+      135deg,
+      #f3a261 0%,
+      #f3a261 55%,
+      #91bd9d 100%
+    );
+}
+
+
 
 
 .character-info {
@@ -1057,6 +1164,72 @@ button {
 
   font-size: 12px;
 }
+
+/* ========================================
+   CHARACTER CIRCLE IMAGE
+======================================== */
+
+.character-image {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 25px;
+}
+
+
+/* 円形キャラクター画像 */
+
+.character-circle-image {
+  position: absolute;
+
+  right: 8%;
+  bottom: 8%;
+
+  left: auto;
+  top: auto;
+
+  width: 230px;
+  height: 230px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 5px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.2),
+    0 0 0 9px rgba(255, 255, 255, 0.08);
+
+  z-index: 2;
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+
+/* ホバー */
+
+.character-card:hover .character-circle-image {
+  transform: translateY(-6px) scale(1.04);
+
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 11px rgba(255, 255, 255, 0.1);
+}
+
+
+/* 番号を画像より前に */
+
+.character-image > span {
+  position: relative;
+  z-index: 3;
+}
+
 
 
 /* ========================================
@@ -1460,6 +1633,21 @@ button {
   .card-content {
     padding: 30px 25px;
   }
+  
+
+    .character-circle-image {
+      right: 6%;
+      bottom: 7%;
+  
+      width: 170px;
+      height: 170px;
+  
+      border-width: 4px;
+  
+      box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.2),
+        0 0 0 7px rgba(255, 255, 255, 0.08);
+    }
 
 
 }
@@ -1473,6 +1661,10 @@ button {
 
 .world-section {
   background: #eef9f5;
+}
+
+.world-story-point {
+  margin-top: 60px;
 }
 
 
@@ -1980,6 +2172,12 @@ button {
     min-height: 420px;
   }
 
+  .world-story-point {
+      margin-top: 35px;
+  }
+
+  
+
 }
 
 
@@ -2135,6 +2333,7 @@ button {
   .final-message {
     padding-top: 90px;
   }
+  
 
 }
 
