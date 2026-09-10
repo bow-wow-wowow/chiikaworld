@@ -415,3 +415,188 @@ function handleCharacterSwipe() {
 ======================================== */
 
 updateCharacterCarousel();
+
+
+/* ========================================
+   VIDEO FACADE
+======================================== */
+
+const videoDialog = document.querySelector(".video-dialog");
+const videoDialogFrame = videoDialog.querySelector(".video-dialog-frame");
+const videoDialogTitle = videoDialog.querySelector(".video-dialog-title");
+const videoDialogClose = videoDialog.querySelector(".video-dialog-close");
+
+
+/*
+ * YouTube の API は動画を開いた時にだけ読み込む。
+ * 字幕はパラメータでは消えないため、API から明示的に外す。
+ */
+
+let youTubeApi = null;
+
+const loadYouTubeApi = () => {
+
+  if (youTubeApi) {
+    return youTubeApi;
+  }
+
+  youTubeApi = new Promise((resolve) => {
+
+    window.onYouTubeIframeAPIReady = () => {
+      resolve(window.YT);
+    };
+
+    const tag = document.createElement("script");
+
+    tag.src = "https://www.youtube.com/iframe_api";
+
+    document.head.appendChild(tag);
+
+  });
+
+  return youTubeApi;
+
+};
+
+
+let videoPlayer = null;
+
+
+/*
+ * 字幕はパラメータでは消えないため、モジュールを外して現在のトラックも空にする
+ */
+
+const disableCaptions = (player) => {
+
+  try {
+
+    player.unloadModule("captions");
+    player.unloadModule("cc");
+
+    player.setOption("captions", "track", {});
+    player.setOption("cc", "track", {});
+
+  } catch (error) {
+
+    /* モジュールが無い状態では何もしない */
+
+  }
+
+};
+
+
+/*
+ * 閉じたらプレイヤーごと捨てる（再生も止まる）
+ */
+
+const clearVideoDialog = () => {
+
+  if (videoPlayer) {
+    videoPlayer.destroy();
+    videoPlayer = null;
+  }
+
+  videoDialogFrame.textContent = "";
+  videoDialogTitle.textContent = "";
+
+};
+
+
+document
+  .querySelectorAll(".video-facade")
+  .forEach((facade) => {
+
+    facade.addEventListener("click", async () => {
+
+      const videoId = facade.dataset.videoId;
+
+      if (!videoId) {
+        return;
+      }
+
+      const label = facade.getAttribute("aria-label") || "";
+
+      videoDialogTitle.textContent = label.replace(/を再生する$/, "");
+
+      videoDialog.showModal();
+
+      const api = await loadYouTubeApi();
+
+      if (!videoDialog.open) {
+        return;
+      }
+
+      const mount = document.createElement("div");
+
+      videoDialogFrame.textContent = "";
+      videoDialogFrame.appendChild(mount);
+
+      videoPlayer = new api.Player(mount, {
+        videoId: videoId,
+        host: "https://www.youtube-nocookie.com",
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          rel: 0,
+          playsinline: 1,
+          cc_load_policy: 0,
+          iv_load_policy: 3,
+          modestbranding: 1
+        },
+        events: {
+          onReady: (event) => {
+
+            event.target.mute();
+
+            disableCaptions(event.target);
+
+            event.target.playVideo();
+
+          },
+          onStateChange: (event) => {
+
+            /*
+             * 再生が始まると字幕モジュールが戻るため、都度外す
+             */
+
+            if (event.data === api.PlayerState.PLAYING) {
+              disableCaptions(event.target);
+            }
+
+          }
+        }
+      });
+
+    });
+
+  });
+
+
+videoDialogClose.addEventListener("click", () => {
+
+  videoDialog.close();
+
+});
+
+
+/*
+ * 枠の外はどこをタップしても閉じる
+ */
+
+videoDialog.addEventListener("click", (event) => {
+
+  const insideFrame = event.target.closest(".video-dialog-frame");
+  const isCloseButton = event.target.closest(".video-dialog-close");
+
+  if (!insideFrame && !isCloseButton) {
+    videoDialog.close();
+  }
+
+});
+
+
+/*
+ * Esc とボタンの両方をここで受ける
+ */
+
+videoDialog.addEventListener("close", clearVideoDialog);
